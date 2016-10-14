@@ -1,0 +1,119 @@
+/* put your css code here */
+
+.jumbotron {
+	background-color:#57bc90;
+	color: #262626;
+	padding-bottom: 0px;
+	margin-bottom:0px;
+}
+
+.container-fluid {
+	padding:0px;
+}
+
+.title {
+	padding-left: 20px;
+}
+
+body {
+	background-color:white;
+	color: #262626;
+}
+
+#list {
+	padding-left: 30px;
+	box-shadow: none;
+	background-color: #015249;
+	border-radius: none;
+	border: none;
+}
+#home > a{
+	color: #a5a5af;
+}
+
+
+#albums > a {
+	color: #a5a5af;
+}
+
+#photos > a {
+	color: #a5a5af;
+}
+
+
+#list >li > a:hover,
+#list >li > a:focus {
+	background: #77c9d4;
+	color: #262626;
+	border:none;
+	border-radius: 0px;
+}
+
+#list > li.active > a,
+#list > li.active > a:hover,
+#list > li.active > a:focus {
+	background: #77c9d4;
+	color: #262626;
+	border:none;
+	border-radius: 0px;
+}
+
+#list > .open > a,
+#list > .open > a:hover,
+#list > .open > a:focus {
+	background:#77c9d4;
+	color: #262626;
+	border:none;
+}
+
+#list .open .dropdown-menu {
+	background: #015249;
+	color: #d9d9d9;
+}
+
+#list .open .dropdown-menu >li > a {
+	background: #015249;
+	color: #a5a5af;
+	border:none;
+}
+
+#list .open .dropdown-menu >li >a:hover,
+#list .open .dropdown-menu >li >a:active {
+	background: #b3d9ff;
+	color:#262626;
+	border:none;
+}
+.crop-image {
+	max-height: 150px;
+	max-width: auto;
+	padding: 7.5px;
+	margin: 0px auto;
+}
+
+.album-thumbnail {
+	z-index: 1000;
+}
+
+.border {
+	border: 3px solid black;
+	transition: linear 0.1s;
+}
+
+.border:hover {
+
+	border: 1px solid #77c9d4;
+	box-shadow: 0px 0px 5px 5px #77c9d4;
+}
+
+.large-image {
+	width: 500px;
+	height: 500px;
+}
+
+#toggle {
+	position: relative;
+}
+
+h4 {
+	margin-bottom: 0px;
+}

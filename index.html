@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- include our libraries and css files -->
+<title>Animal Gallery</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assignment.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="jumbotron" >
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+			<h1 class="title">Animal Gallery</h1>
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="container-fluid">
+				<ul class="nav nav-tabs" id="list" role="navigation">
+				</ul>
+			</div>
+		</div>
+		<div id="content" class="container" role="main">
+		</div>
+
+<!--This script is for creating the navbar. The navbar is data driven as the albums tab is a dropdown menu containing the 
+classes of the animals in the object.-->
+<script id="list-template" type="text/x-handlebars-template">
+		<li role="presentation" class="active" id="home">
+			<a href=#><span class="glyphicon glyphicon-home"></span> Home</a></li>
+		<li role="presentation" class="dropdown" id="albums">
+	        <a href=# class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Albums <span class="caret"></span></a>
+	            <ul class="dropdown-menu" id="classList">
+				    {{#each category}}
+				             <li data-id="{{@index}}"><a href=#> {{class}} </a></li>
+				    {{/each}}
+				</ul>
+				</li>
+		<li role="presentation" id="photos"><a href=#><span class="glyphicon glyphicon-picture"></span> Photos</a></li>
+</script>
+
+<!--This script is for creating the initial content of the page containing the albums of the animal classes.-->
+<script id="albums-template" type="text/x-handlebars-template">
+	<br>
+	<br>
+	<div class="row">
+		{{#each category}}
+			<div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
+				<a class="album-thumbnail" data-id="{{@index}}" href=#>
+				<div class="row border">
+					{{#each animals}}
+			        	<div class=" col-xs-6">
+	          				<img class="img-responsive crop-image" src="{{image1}}" title="{{class}}"/> 
+	            		</div>
+	            	{{/each}}
+	            </div>
+	            </a>
+	          	<div class="caption text-center">
+	              	<h4> {{class}} </h4>
+	              	<p>{{animals.length}} photos</p>
+	          	</div>
+	          	<br/>
+			</div>
+     	{{/each}}
+    </div>
+</script>
+
+<!--This script lists the animals belonging to the same class when you click at a particular class.-->
+<script id="photos-template" type="text/x-handlebars-template">
+<div class="row">
+	<div class="col-xs-12 text-center">
+		<h1>{{class}}</h1>
+		<hr>
+	</div>
+	<div class="col-xs-12">
+		<div class="row">
+					{{#each animals}}
+			        	<div class=" col-xs-3 col-lg-3">
+			        	<a class="photo-thumbnail" href=# data-id="{{@index}}">
+	          				<img class="img-responsive crop-image border" src="{{image1}}" title="{{class}}"/> 
+	          			</a>
+	              		<h4 class="text-center"> {{name}} </h4>
+	          			</div>
+	{{/each}}
+	</div>
+	</div>
+</div>
+</script>
+
+<!--This script creates the individual animal profiles the will be shown if you click a particular animal inside the album.-->
+<script id="photo-template" type="text/x-handlebars-template">
+	<br>
+	<br>
+
+	<div class="row">
+		<div class="col-xs-12">
+				<div id="toggle">
+					<img class="img-responsive large-image image12" src="{{image1}}" title="{{name}}">
+					<img class="img-responsive large-image image12" src="{{image2}}" title="{{name}}" style="display:none;">
+				</div>
+		</div>
+		</div>
+		<div class="col-xs-12" style="padding-left:0px;">
+			<sup>*Click the picture to change the image</sup>
+			<br>
+			<h1>{{name}}</h1>
+			<p>{{description}}</p>
+			</div>
+		</div>
+</script>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="AnimalsData.js"></script>
+<script type="text/javascript" src="assignment.js"></script>
+</body>
+</html>
