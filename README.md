@@ -1,2 +1,2 @@
 # Animal-Gallery
-Part of Responsive Web Design Requirement
+Final project of Responsive Web Design in Coursera
